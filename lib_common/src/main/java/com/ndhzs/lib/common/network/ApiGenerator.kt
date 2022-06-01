@@ -71,15 +71,10 @@ object ApiGenerator {
       .apply { config.invoke(this) }
       .build()
   }
-  
-  private val retrofit by lazyUnlock {
-    getNewRetrofit(true) {}
-  }
-  
-  private val mAccountService by lazyUnlock {
-    ServiceManager(IAccountService::class)
-  }
-  
+
+  private val mAccountService = ServiceManager(IAccountService::class)
+  private val retrofit = getNewRetrofit(true) {}
+
   private fun OkHttpClient.Builder.defaultOkhttpConfig(isNeedCookie: Boolean): OkHttpClient {
     connectTimeout(10, TimeUnit.SECONDS)
     readTimeout(10, TimeUnit.SECONDS)

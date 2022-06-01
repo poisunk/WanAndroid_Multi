@@ -1,6 +1,6 @@
 package com.ndhzs.module.system.page.viewmodel
 
-import com.ndhzs.lib.common.ui.BaseViewModel
+import com.ndhzs.lib.common.ui.mvvm.BaseViewModel
 
 /**
  * @author 1446157077 (Watermelon02)

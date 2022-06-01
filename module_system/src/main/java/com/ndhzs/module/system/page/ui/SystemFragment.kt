@@ -19,6 +19,5 @@ import com.ndhzs.module.system.page.viewmodel.SystemViewModel
 @Route(path = "/system/system")
 class SystemFragment : BaseVmBindFragment<SystemViewModel, FragmentSystemBinding>() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    super.onViewCreated(view, savedInstanceState)
   }
 }

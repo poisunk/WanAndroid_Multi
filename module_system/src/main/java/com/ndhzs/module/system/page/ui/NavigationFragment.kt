@@ -2,6 +2,7 @@ package com.ndhzs.module.system.page.ui
 
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.flexbox.AlignItems
 import com.google.android.flexbox.FlexDirection
@@ -20,16 +21,14 @@ import com.ndhzs.module.system.page.viewmodel.SystemViewModel
  */
 @Route(path = "/system/navigation")
 class NavigationFragment : BaseVmBindFragment<NavigationViewModel, FragmentNavigationBinding>() {
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         val manager = FlexboxLayoutManager(this.requireContext(), FlexDirection.ROW)
         manager.justifyContent = JustifyContent.FLEX_START
         manager.alignItems = AlignItems.CENTER
         binding.navigationRv.layoutManager = manager
-        binding.navigationRv.deco
         viewModel.getNavigation {
             binding.navigationRv.adapter = NavigationRecyclerAdapter(it.articles)
         }
     }
-
 }
