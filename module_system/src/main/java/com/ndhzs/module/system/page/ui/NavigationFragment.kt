@@ -8,6 +8,7 @@ import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
 import com.ndhzs.lib.common.ui.mvvm.BaseVmBindFragment
+import com.ndhzs.module.system.adapter.NavigationRecyclerAdapter
 import com.ndhzs.module.system.databinding.FragmentNavigationBinding
 import com.ndhzs.module.system.page.viewmodel.NavigationViewModel
 import com.ndhzs.module.system.page.viewmodel.SystemViewModel
@@ -25,6 +26,10 @@ class NavigationFragment : BaseVmBindFragment<NavigationViewModel, FragmentNavig
         manager.justifyContent = JustifyContent.FLEX_START
         manager.alignItems = AlignItems.CENTER
         binding.navigationRv.layoutManager = manager
+        binding.navigationRv.deco
+        viewModel.getNavigation {
+            binding.navigationRv.adapter = NavigationRecyclerAdapter(it.articles)
+        }
     }
 
 }

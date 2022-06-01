@@ -1,5 +1,7 @@
 import lib.dependAndroidView
 import lib.dependAndroidKtx
+import lib.dependNetwork
+import lib.dependRxjava
 
 plugins {
 //    id("module-manager")
@@ -8,3 +10,5 @@ plugins {
 
 dependAndroidView()
 dependAndroidKtx()
+dependNetwork()
+dependRxjava()
