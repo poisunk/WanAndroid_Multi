@@ -15,6 +15,7 @@ const val TEST_SERVICE = "/test/service"
 
 // login 模块
 const val LOGIN_ENTRY = "/login/entry"
+const val LOGIN_SERVICE = "/login/service"
 
 // account 模块
 const val ACCOUNT_SERVICE = "/account/service"

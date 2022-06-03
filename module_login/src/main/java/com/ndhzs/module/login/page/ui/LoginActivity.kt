@@ -1,5 +1,7 @@
 package com.ndhzs.module.login.page.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.ndhzs.lib.common.config.LOGIN_ENTRY
@@ -12,6 +14,14 @@ import com.ndhzs.module.login.utils.textwatcher.BaseTextWatcher
 
 @Route(path = LOGIN_ENTRY)
 class LoginActivity : BaseVmBindActivity<LoginViewModel, ActivityLoginBinding>() {
+
+  companion object{
+    fun start(context: Context){
+      context.startActivity(
+        Intent(context, LoginActivity::class.java)
+      )
+    }
+  }
   
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
